@@ -1,19 +1,14 @@
-/* 
 body {
 	font-family: helvetica, arial, sans-serif;
+	color: rgb(139, 51, 0);
 }
 
 h1 {
-	color: #3a241d;
 	text-align: center;
 }
 
-#left-container {
-	left: 0px;
-}
-
-#right-container {
-	right: 0px;
+div {
+	background-color: rgb(207, 202, 202);
 }
 
 .container {
@@ -23,6 +18,14 @@ h1 {
 	position: absolute;
 	height: 100%;
 	padding: 10px;
+}
+
+#left-container {
+	left: 0px;
+}
+
+#right-container {
+	right: 0px;
 }
 
 .plant-holder {
@@ -37,6 +40,21 @@ h1 {
 	max-height: 150%;
 	z-index: 2;
 }
+
+div img {
+	width: 120px;
+}
+
+#left-container div img {
+	width: 70px;
+}
+
+/* Pseudo-classes--> :hover:focus:active:nth-child(2) */
+h1:hover {
+	color: pink;
+}
+
+
 
 .jar-walls {
 	height: 80%;
@@ -101,4 +119,32 @@ h1 {
 	position: absolute;
 	bottom: 45%;
 	left: 5%;
-} */
+}
+
+/* adding animation */
+@keyframes slide-in {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+
+}
+
+/* apply the animation to an element */
+.plant {
+	animation: slide-in 1s ease-in-out;
+}
+
+/* transitaion */
+.plant {
+	transition: width 2s, hight 2s, background-color 1s;
+}
+
+.plant:hover {
+	width: 200px;
+	height: 200px;
+	background-color: goldenrod;
+}
