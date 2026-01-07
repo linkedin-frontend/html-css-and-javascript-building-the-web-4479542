@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input {
+      padding: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin-left: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 5px;
+      margin: 5px 0;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="clickBtn">Click me</button>
+  <p id="clickText"></p>
+
+  <script>
+    document.getElementById("clickBtn").onclick = function () {
+      document.getElementById("clickText").innerText = "Button clicked!";
+    };
+  </script>
+
+  <p id="hoverText">Hover over me</p>
+
+  <script>
+    const text = document.getElementById("hoverText");
+
+    text.onmouseover = () => text.style.color = "blue";
+    text.onmouseout = () => text.style.color = "black";
+  </script>
+
+
+  <input type="text" id="keyInput" placeholder="Type something">
+  <p id="keyResult"></p>
+
+  <script>
+    document.getElementById("keyInput").onkeyup = function (event) {
+      document.getElementById("keyResult").innerText =
+        "You pressed: " + event.key;
+    };
+  </script>
+
+
+  <p>Scroll down the page</p>
+  <div style="height: 1500px;"></div>
+
+  <script>
+    window.onscroll = function () {
+      console.log("Page is scrolling");
+    };
+  </script>
+
+
+  <form id="myForm">
+    <input type="text" id="name" placeholder="Enter name">
+    <button type="submit">Submit</button>
+  </form>
+  <p id="formResult"></p>
+
+  <script>
+    document.getElementById("myForm").onsubmit = function (event) {
+      event.preventDefault(); // stop page reload
+      document.getElementById("formResult").innerText =
+        "Hello, " + document.getElementById("name").value;
+    };
+  </script>
+
+  <h1>To-Do List</h1>
+
+  <input type="text" id="todo-input" placeholder="Enter new task">
+  <button id="add-btn">Add</button>
+
+  <ul id="todo-list"></ul>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
